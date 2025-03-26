@@ -38,11 +38,13 @@
             <a href="https://www.senaipr.org.br/" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIr2Sx9YHnAZmLQpyTO3JRfVOyhkI3hs-MDw&s"></a>
         </section>
 
-
-        <footer>
-            <div class="container">
-                <table border="1">
+        <section class="tabela-lista">
+            <div class="container tabela">
+                <table>
                     <thead>
+                        <tr>
+                            <th colspan="3">Diretores Gerais</th>
+                        </tr>
                         <tr>
                             <th>Nome</th>
                             <th>Época de Gerência</th>
@@ -69,43 +71,47 @@
                 </table>
             </div>
 
-            <div class="container">
+            <div class="container info">
                 <ul type="square">
-                    <p>Informação</p>
-                    <li>Localização: Brasília, DF</li>
-                    <li>Tipo de instituição: Serviço social autônomo</li>
-                    <li>Fundação: 	22 de janeiro de 1942 (83 anos) Rio de Janeiro, RJ, Brasil</li> 
-                    <li>Afiliações: <a href="https://pt.wikipedia.org/wiki/Confedera%C3%A7%C3%A3o_Nacional_da_Ind%C3%BAstria">CNI</a></li>
-                    <li>Número de Estudantes: 2.362.312 matrículas (2010)</li>
+                    <h3>Informações</h3>
+                    <li><label>Localização:</label> Brasília, DF</li>
+                    <li><label>Tipo de instituição:</label> Serviço social autônomo</li>
+                    <li><label>Fundação:</label> 	22 de janeiro de 1942 (83 anos) Rio de Janeiro, RJ, Brasil</li> 
+                    <li><label>Afiliações:</label> <a href="https://pt.wikipedia.org/wiki/Confedera%C3%A7%C3%A3o_Nacional_da_Ind%C3%BAstria">CNI</a></li>
+                    <li><label>Número de Estudantes:</label> 2.362.312 matrículas (2010)</li>
                 </ul>
             </div>
+        </section>
 
-            <form>
-                <label for="nome">Nome Completo:</label>
-                <br />
-                <input type="text" name="nome" placeholder="Nome..." />
-                <br />
-                <label for="email">E-mail:</label>
-                <br />
-                <input type="email" name="email" placeholder="E-mail..." />
-                <br />
-                <label for="curso">Selecione um curso:</label>
-                <br />
-                <select name="curso" id="cursos">
-                    <option value="desenvolvimento-sistemas">Desenvolvimento de Sistemas</option>
-                    <option value="automacao-industrial">Automação Industrial</option>
-                    <option value="administracao">Administração</option>
-                    <option value="biotecnologia">Biotecnologia</option>
-                    <option value="cibersistemas-automacao">Cibersistemas para Automação</option>
-                    <option value="eletromecanica">Eletromecânica</option>
-                </select>
-                <br />
-                <input type="checkbox" name="termos">
-                <label for="termos">Você leu e aceita os termos de serviço.</label>
-                <br />
-                <br />
-                <button type="submit">Registrar-se</button>
-            </form>
+        <footer>
+            <div class="formulario">
+                <form>
+                    <h2>Registrar-se</h2>
+                    <!--<label for="nome">Nome Completo:</label>--> 
+                    <input type="text" name="nome" placeholder="Insira seu nome completo..." />
+                    <br />
+                    <!--<label for="email">E-mail:</label>-->
+                    <input type="email" name="email" placeholder="Insira seu e-mail..." />
+                    <br />
+                    <br />
+                    <label for="curso">Selecione um curso:</label>
+                    <br />
+                    <select name="curso" id="cursos">
+                        <option value="desenvolvimento-sistemas">Desenvolvimento de Sistemas</option>
+                        <option value="automacao-industrial">Automação Industrial</option>
+                        <option value="administracao">Administração</option>
+                        <option value="biotecnologia">Biotecnologia</option>
+                        <option value="cibersistemas-automacao">Cibersistemas para Automação</option>
+                        <option value="eletromecanica">Eletromecânica</option>
+                    </select>
+                    <br />
+                    <input type="checkbox" name="termos">
+                    <label for="termos">Você leu e aceita os termos de serviço.</label>
+                    <br />
+                    <br />
+                    <button type="submit">Registrar</button>
+                </form>
+            </div>
         </footer>
     </body>
 </html>
