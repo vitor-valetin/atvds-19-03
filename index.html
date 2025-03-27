@@ -12,8 +12,20 @@
     <body>
 
         <header>
+            <input type="checkbox" id="onClick" />
+            <label for="onClick"><img class="icon" src="imgs/menu.png"></label>
+
             <h2>SENAI - Serviço Nacional de Aprendizagem Industrial</h2>
         </header>
+
+        <section class="menu">
+            <ul>
+                <li><a href="register.html">Registrar-se</a></li>
+                <li><a href="login.html">Entrar</a></li>
+                <li><a href="sobre.html">Sobre o SENAI</a></li>
+                <li><a href="diretores.html">Diretores Gerais</a></li>
+            </ul>
+        </section>
 
         <section>
             <h3>O que é o SENAI?</h3>
@@ -77,20 +89,20 @@
                     <li><label>Localização:</label> Brasília, DF</li>
                     <li><label>Tipo de instituição:</label> Serviço social autônomo</li>
                     <li><label>Fundação:</label> 	22 de janeiro de 1942 (83 anos) Rio de Janeiro, RJ, Brasil</li> 
-                    <li><label>Afiliações:</label> <a href="https://pt.wikipedia.org/wiki/Confedera%C3%A7%C3%A3o_Nacional_da_Ind%C3%BAstria">CNI</a></li>
+                    <li><label>Afiliações:</label> <a href="https://pt.wikipedia.org/wiki/Confedera%C3%A7%C3%A3o_Nacional_da_Ind%C3%BAstria" target="_blank">CNI</a></li>
                     <li><label>Número de Estudantes:</label> 2.362.312 matrículas (2010)</li>
                 </ul>
             </div>
         </section>
 
-        <footer>
+        <section class="form">
             <div class="formulario">
                 <form>
-                    <h2>Registrar-se</h2>
-                    <!--<label for="nome">Nome Completo:</label>--> 
+                    <h2>Consultar Curso</h2>
+                    <img src="imgs/user.png">
                     <input type="text" name="nome" placeholder="Insira seu nome completo..." />
                     <br />
-                    <!--<label for="email">E-mail:</label>-->
+                    <img src="imgs/envelope.png">
                     <input type="email" name="email" placeholder="Insira seu e-mail..." />
                     <br />
                     <br />
@@ -109,9 +121,14 @@
                     <label for="termos">Você leu e aceita os termos de serviço.</label>
                     <br />
                     <br />
-                    <button type="submit">Registrar</button>
+                    <button type="submit">Consultar</button>
                 </form>
             </div>
+        </section>
+
+        <footer>
+            <h4>Site feito por: <p>Vitor</p></h4>
+            <h5>Todos os direitos reservados</h5>
         </footer>
     </body>
 </html>

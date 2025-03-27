@@ -1,6 +1,20 @@
+@font-face {
+    font-family: "Ethnocentric";
+    src: url("fonts/Ethnocentric-Rg.otf");
+}
+
+@keyframes menuOpen{
+    0% {width: 50px;}
+    25% {width: 100px;}
+    50% {width: 150px;}
+    75% {width: 200px;}
+    100% {width: 250px;}
+}
+
 html{
     min-height: 100%;
 }
+
 body {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
@@ -11,6 +25,14 @@ body {
     background: -webkit-linear-gradient(top, #3d6294 20%, #68b4f2 100%);
     color: white;
     min-height: 120%;
+}
+
+*:focus{
+    outline: none;
+}
+
+#onClick{
+    display: none;
 }
 
 h2{
@@ -25,10 +47,69 @@ h3{
 }
 
 header{
+    display: flex;
     background-color: rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 0;
     width: 100%;
+    justify-content: center;
+    height: 80px;
+}
+
+header .icon{
+    width: 40px;
+    height: 40px;
+    margin-top: 20px;
+    position: absolute;
+    left: 10px;
+    
+}
+
+header .icon:hover{
+    cursor: pointer;
+    transform: scale(1.05, 1.05);
+}
+
+#onClick:checked + label > .icon{
+    transform: scale(1, 1);
+}
+
+body:has(#onClick:checked) .menu{
+    display: block;
+    animation-name: menuOpen;
+    animation-duration: 0.3s;
+}
+
+.menu{
+    display: none;
+    position: fixed;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 100%;
+    top: 0;
+    margin-top: 80px;
+}
+
+.menu ul{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.menu li{
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.menu a{
+    font-size: 18px;
+    padding: 15px;
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+
+.menu a:hover{
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 section{
@@ -127,6 +208,10 @@ img{
     background-color: rgba(0, 0, 0, 0.4);
 }
 
+.form{
+    margin-top: 0;
+}
+
 .formulario{
     margin-top: 40px;
     display: flex;
@@ -152,12 +237,23 @@ img{
 
 .formulario input{
     padding: 10px;
+    padding-left: 35px;
     border: 0;
     border-bottom: 1.2px solid black;
     background-color: rgba(0, 0, 0, 0);
     width: 70%;
     color: white;
     font-size: 16px;
+    margin-top: 10px;
+}
+
+.formulario img{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    margin-top: 16px;
+    margin-left: 4px;
+    border-radius: 0;
 }
 
 .formulario input:nth-child(4){
@@ -213,4 +309,38 @@ img{
     cursor: pointer;
     background-color: #3a6daf !important;
     color: white !important;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+    height: 80px;
+}
+
+footer h4{
+    margin: 0;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+footer p{
+    font-size: 20px;
+    display: inline;
+    margin: 0 5px;
+    font-family: "Ethnocentric";
+    color: white;
+}
+
+footer p:hover{
+    color: purple;
+    cursor: default;
+}
+
+footer h5{
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
 }
