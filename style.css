@@ -3,12 +3,12 @@
     src: url("fonts/Ethnocentric-Rg.otf");
 }
 
-@keyframes menuOpen{
-    0% {width: 50px;}
-    25% {width: 100px;}
-    50% {width: 150px;}
-    75% {width: 200px;}
-    100% {width: 250px;}
+@keyframes check {
+    0% {transform: scale(1, 1.25);}
+    25% {transform: scale(1.25, 1.5);}
+    50% {transform: scale(1.5, 1.75);}
+    75% {transform: scale(1.25, 1.5);}
+    100% {transform: scale(1, 1.25);}
 }
 
 html{
@@ -16,6 +16,7 @@ html{
 }
 
 body {
+    position: relative;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -24,7 +25,14 @@ body {
     box-sizing: border-box;
     background: -webkit-linear-gradient(top, #3d6294 20%, #68b4f2 100%);
     color: white;
-    min-height: 120%;
+    min-height: 100vh;
+    cursor: default;
+}
+
+body::after {
+    content: '';
+    display: block;
+    height: 80px;
 }
 
 *:focus{
@@ -75,19 +83,19 @@ header .icon:hover{
 }
 
 body:has(#onClick:checked) .menu{
-    display: block;
-    animation-name: menuOpen;
-    animation-duration: 0.3s;
+    max-width: 250px;
 }
 
 .menu{
-    display: none;
+    display: block;
     position: fixed;
-    width: 250px;
+    overflow: hidden;
+    max-width: 0px;
     background-color: rgba(0, 0, 0, 0.2);
     height: 100%;
     top: 0;
     margin-top: 80px;
+    transition: max-width 0.3s ease-in-out;
 }
 
 .menu ul{
@@ -202,6 +210,7 @@ img{
     background-color: rgba(0, 0, 0, 0.2);
     width: 650px;
     justify-content: center;
+    transition: all 0.2s ease-in-out;
 }
 
 .container:hover{
@@ -216,14 +225,17 @@ img{
     margin-top: 40px;
     display: flex;
     justify-content: center;
+    
 }
 
 .formulario form{
     width: 400px;
-    height: 400px;
+    height: 410px;
     border: 2px solid black;
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    transition: all 0.2s ease-in-out;
 }
 
 .formulario form:hover{
@@ -245,6 +257,15 @@ img{
     color: white;
     font-size: 16px;
     margin-top: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.formulario input:hover{
+    box-shadow: 0 8px 8px -8px black;
+}
+
+.formulario input:focus{
+    box-shadow: 0 10px 8px -8px black;
 }
 
 .formulario img{
@@ -264,28 +285,52 @@ img{
     color: rgba(255, 255, 255, 0.8);
 }
 
-.formulario label.first{
-    font-size: 20px;
-    letter-spacing: 1.4px;
+.arrow-custom{
+    margin-bottom: 5px;
+    position: relative;
+    width: 400px;
 }
 
-.formulario label.second{
-    font-size: 15px;
-    letter-spacing: 1px;
+.arrow-custom::after{
+    content: "▼";
+    font-size: 16px;
+    color: white;
+    position: absolute;
+    top: 58%;
+    right: 68px;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease-in-out;
+    pointer-events: none;
 }
 
-.formulario select{
+#cursos{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     margin-top: 8px;
     width: 70%;
     height: 40px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(55, 55, 55, 0.2);
     border: 1px solid black;
     font-size: 15px;
+    padding-left: 7px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    color: white;
+    font-weight: 700;
 }
 
-.formulario input[type="checkbox"]{
-    margin-top: 30px;
-    width: 20px;
+#cursos:hover{
+    border-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(55, 55, 55, 0.4);
+    box-shadow: 0 0 12px black;
+}
+
+#cursos:focus{
+    outline: none;
+    border-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    background-color: rgba(55, 55, 55, 0.7);
 }
 
 .formulario button{
@@ -297,12 +342,13 @@ img{
     color: white;
     font-weight: 500;
     font-size: 18px;
-    margin-top: 10px;
+    transition: all 0.2s ease-in-out;
 }
 
 .formulario:has(form:hover) button{
     background-color: #2c5283;
     color: rgba(255, 255, 255, 0.9);
+    
 }
 
 .formulario button:hover{
@@ -312,13 +358,15 @@ img{
 }
 
 footer{
+    position: absolute;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
-    margin-top: 10px;
     height: 80px;
+    bottom: 0;
 }
 
 footer h4{
@@ -333,14 +381,42 @@ footer p{
     margin: 0 5px;
     font-family: "Ethnocentric";
     color: white;
+    transition: all 0.2s ease-in-out;
 }
 
 footer p:hover{
     color: purple;
+    font-size: 25px;
     cursor: default;
 }
 
 footer h5{
     margin: 0;
     color: rgba(255, 255, 255, 0.8);
+}
+
+.custom-check input{
+    display: none;
+}
+
+.custom-check span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    position: relative;
+    margin-right: 10px;
+    vertical-align: middle;
+    transition: all 0.2s ease;
+}
+
+.custom-check input:checked + span::after {
+    content: "✔";
+    position: absolute;
+    top: -2px;
+    left: 4px;
+    font-size: 16px;
+    color: #fff;
+    animation: check 0.09s linear;
 }

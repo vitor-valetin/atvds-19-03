@@ -20,10 +20,10 @@
 
         <section class="menu">
             <ul>
-                <li><a href="register.html">Registrar-se</a></li>
-                <li><a href="login.html">Entrar</a></li>
-                <li><a href="sobre.html">Sobre o SENAI</a></li>
-                <li><a href="diretores.html">Diretores Gerais</a></li>
+                <li><a href="pages/register.html">Registrar-se</a></li>
+                <li><a href="pages/login.html">Entrar</a></li>
+                <li><a href="pages/sobre.html">Sobre o SENAI</a></li>
+                <li><a href="pages/diretores.html">Diretores Gerais</a></li>
             </ul>
         </section>
 
@@ -108,17 +108,22 @@
                     <br />
                     <label for="curso">Selecione um curso:</label>
                     <br />
-                    <select name="curso" id="cursos">
-                        <option value="desenvolvimento-sistemas">Desenvolvimento de Sistemas</option>
-                        <option value="automacao-industrial">Automação Industrial</option>
-                        <option value="administracao">Administração</option>
-                        <option value="biotecnologia">Biotecnologia</option>
-                        <option value="cibersistemas-automacao">Cibersistemas para Automação</option>
-                        <option value="eletromecanica">Eletromecânica</option>
-                    </select>
+                    <div class="arrow-custom">
+                        <select name="curso" id="cursos">
+                            <option value="" disabled selected>Escolha um curso</option>
+                            <option value="desenvolvimento-sistemas">Desenvolvimento de Sistemas</option>
+                            <option value="automacao-industrial">Automação Industrial</option>
+                            <option value="administracao">Administração</option>
+                            <option value="biotecnologia">Biotecnologia</option>
+                            <option value="cibersistemas-automacao">Cibersistemas para Automação</option>
+                            <option value="eletromecanica">Eletromecânica</option>
+                        </select>
+                    </div>
                     <br />
-                    <input type="checkbox" name="termos">
-                    <label for="termos">Você leu e aceita os termos de serviço.</label>
+                    <label for="termos" class="custom-check">
+                        <input type="checkbox" id="termos">
+                        <span></span>Você deseja receber e-mails sobre promoções no SENAI
+                    </label>
                     <br />
                     <br />
                     <button type="submit">Consultar</button>
