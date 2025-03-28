@@ -16,6 +16,7 @@ html{
 }
 
 body {
+    position: relative;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -24,7 +25,14 @@ body {
     box-sizing: border-box;
     background: -webkit-linear-gradient(top, #3d6294 20%, #68b4f2 100%);
     color: white;
-    min-height: 120%;
+    min-height: 100vh;
+    cursor: default;
+}
+
+body::after {
+    content: '';
+    display: block;
+    height: 80px;
 }
 
 *:focus{
@@ -222,10 +230,11 @@ img{
 
 .formulario form{
     width: 400px;
-    height: 400px;
+    height: 410px;
     border: 2px solid black;
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
     transition: all 0.2s ease-in-out;
 }
 
@@ -313,14 +322,14 @@ img{
 
 #cursos:hover{
     border-color: rgba(0, 0, 0, 0.7);
-    background-color: rgba(55, 55, 55, 0.5);
+    background-color: rgba(55, 55, 55, 0.4);
     box-shadow: 0 0 12px black;
 }
 
 #cursos:focus{
     outline: none;
     border-color: rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
     background-color: rgba(55, 55, 55, 0.7);
 }
 
@@ -333,7 +342,6 @@ img{
     color: white;
     font-weight: 500;
     font-size: 18px;
-    margin-top: 10px;
     transition: all 0.2s ease-in-out;
 }
 
@@ -350,13 +358,15 @@ img{
 }
 
 footer{
+    position: absolute;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
-    margin-top: 10px;
     height: 80px;
+    bottom: 0;
 }
 
 footer h4{
@@ -371,10 +381,12 @@ footer p{
     margin: 0 5px;
     font-family: "Ethnocentric";
     color: white;
+    transition: all 0.2s ease-in-out;
 }
 
 footer p:hover{
     color: purple;
+    font-size: 25px;
     cursor: default;
 }
 
