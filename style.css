@@ -39,10 +39,6 @@ body::after {
     outline: none;
 }
 
-#onClick{
-    display: none;
-}
-
 h2{
     font-weight: 500;
     font-size: 30px;
@@ -78,12 +74,12 @@ header .icon:hover{
     transform: scale(1.05, 1.05);
 }
 
-#onClick:checked + label > .icon{
-    transform: scale(1, 1);
+#mainButton:hover{
+    cursor: pointer;
 }
 
-body:has(#onClick:checked) .menu{
-    max-width: 250px;
+.menuOpen{
+    max-width: 250px !important;
 }
 
 .menu{
@@ -105,6 +101,7 @@ body:has(#onClick:checked) .menu{
 }
 
 .menu li{
+    z-index: 1;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -116,8 +113,13 @@ body:has(#onClick:checked) .menu{
     color: white;
 }
 
-.menu a:hover{
-    background-color: rgba(0, 0, 0, 0.7);
+#hoverAnimation{
+    width: 250px;
+    height: 52px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    cursor: pointer;
+    transition: all 0.5s ease;
 }
 
 section{
@@ -419,4 +421,72 @@ footer h5{
     font-size: 16px;
     color: #fff;
     animation: check 0.09s linear;
+}
+
+.register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.box-register{
+    width: 500px;
+    height: 700px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.box-register form{
+    margin: 30px 0;
+    position: relative;
+}
+
+.box-register input{
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.box-register input::placeholder{
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.box-register input[type="text"], .box-register input[type="email"], .box-register input[type="password"]{
+    color: white;
+    padding-left: 25px;
+    width: 400px;
+    height: 50px;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid black;
+    transition: all 0.3s ease;
+}
+
+.box-register input[type="text"]:hover, .box-register input[type="email"]:hover, .box-register input[type="password"]:hover{
+    box-shadow: 0 12px 12px -12px black;
+}
+
+.box-register input[type="text"]:focus, .box-register input[type="email"]:focus, .box-register input[type="password"]:focus{
+    box-shadow: 0 16px 18px -12px black;
+}
+
+.box-register .eye{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 50px;
+    transition: all 0.2s ease;
+}
+
+.box-register .senha{
+    top: 280px;
+}
+
+.box-register .confirmSenha{
+    top: 364px;
+}
+
+.box-register .eye:hover{
+    cursor: pointer;
+    transform: scale(1.1);
 }
