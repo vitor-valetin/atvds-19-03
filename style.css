@@ -4,11 +4,15 @@
 }
 
 @keyframes check {
-    0% {transform: scale(1, 1.25);}
-    25% {transform: scale(1.25, 1.5);}
-    50% {transform: scale(1.5, 1.75);}
-    75% {transform: scale(1.25, 1.5);}
-    100% {transform: scale(1, 1.25);}
+    0% {transform: scale(1, 1.5);}
+    25% {transform: scale(1.5, 2);}
+    50% {transform: scale(2, 2.5);}
+    75% {transform: scale(1.5, 2);}
+    100% {transform: scale(1, 1.5);}
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
 }
 
 html{
@@ -16,7 +20,8 @@ html{
 }
 
 body {
-    position: relative;
+    display: flex;
+    flex-direction: column;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -29,10 +34,8 @@ body {
     cursor: default;
 }
 
-body::after {
-    content: '';
-    display: block;
-    height: 80px;
+.main-content{
+    flex: 1;
 }
 
 *:focus{
@@ -74,8 +77,25 @@ header .icon:hover{
     transform: scale(1.05, 1.05);
 }
 
-#mainButton:hover{
+header h2{
+    position: relative;
+    transition: all 1s ease;
+    left: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+header h2:hover{
     cursor: pointer;
+}
+
+.blinking::after{
+    content: "|";
+    position: relative;
+    top: -1px;
+    font-size: 30px;
+    animation: blink 1s step-start infinite;
 }
 
 .menuOpen{
@@ -100,17 +120,17 @@ header .icon:hover{
     padding: 0;
 }
 
-.menu li{
-    z-index: 1;
+.menu li.mItem{
     background-color: rgba(0, 0, 0, 0.4);
-}
-
-.menu a{
     font-size: 18px;
     padding: 15px;
     display: block;
     text-decoration: none;
     color: white;
+}
+
+.menu .mItem:hover{
+    cursor: pointer;
 }
 
 #hoverAnimation{
@@ -120,6 +140,7 @@ header .icon:hover{
     position: absolute;
     cursor: pointer;
     transition: all 0.5s ease;
+    pointer-events: none;
 }
 
 section{
@@ -360,15 +381,14 @@ img{
 }
 
 footer{
-    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 0;
+    margin-top: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    height: 80px;
-    bottom: 0;
 }
 
 footer h4{
@@ -413,6 +433,10 @@ footer h5{
     transition: all 0.2s ease;
 }
 
+.custom-check span:hover {
+    cursor: pointer;
+}
+
 .custom-check input:checked + span::after {
     content: "✔";
     position: absolute;
@@ -420,11 +444,11 @@ footer h5{
     left: 4px;
     font-size: 16px;
     color: #fff;
-    animation: check 0.09s linear;
+    animation: check 0.08s linear;
 }
 
 .register{
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     height: 80vh;
@@ -433,8 +457,9 @@ footer h5{
 .box-register{
     width: 500px;
     height: 700px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: white;
     border-radius: 20px;
+    box-shadow: 0 10px 32px black;
 }
 
 .box-register form{
@@ -447,14 +472,26 @@ footer h5{
     font-size: 20px;
 }
 
+.box-register input[name="nome"]{
+    margin-top: 5px;
+}
+
+.box-register h2{
+    color: #3a6daf;
+    font-weight: 700;
+    margin-top: 49px;
+}
+
 .box-register input::placeholder{
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(0, 0, 0, 0.6);
 }
 
 .box-register input[type="text"], .box-register input[type="email"], .box-register input[type="password"]{
-    color: white;
-    padding-left: 25px;
-    width: 400px;
+    position: relative;
+    left: -20px;
+    color: black;
+    padding-left: 50px;
+    width: 370px;
     height: 50px;
     background-color: transparent;
     border: 0;
@@ -479,14 +516,161 @@ footer h5{
 }
 
 .box-register .senha{
-    top: 280px;
+    top: 260px;
 }
 
 .box-register .confirmSenha{
-    top: 364px;
+    top: 344px;
 }
 
 .box-register .eye:hover{
     cursor: pointer;
     transform: scale(1.1);
+}
+
+.box-register .custom-check{
+    color: black;
+    position: relative;
+    top: 40px;
+}
+
+.box-register .custom-check input:checked + span::after {
+    content: "✔";
+    position: absolute;
+    top: -6px;
+    left: 1px;
+    font-size: 22px;
+    color: #3a6daf;
+    animation: check 0.08s linear;
+}
+
+.regIcons{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    left: 30px;
+    top: 10px
+}
+
+.box-register button{
+    position: relative;
+    top: 80px;
+    width: 150px;
+    height: 50px;
+    border: 0;
+    border-radius: 10px;
+    background-color: #3a6daf;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.box-register button:hover{
+    cursor: pointer;
+    background-color: #2c5283;
+    transform: scale(1.1);
+}
+
+body:has(.box-register input[name="senha"]:focus) .passwdRules{
+    opacity: 1;
+}
+
+.passwdRules{
+    opacity: 0;
+    position: absolute;
+    width: 270px;
+    height: 200px;
+    top: 250px;
+    right: -280px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
+    transition: all 0.5s ease;
+}
+
+.passwdRules p{
+    font-weight: 600;
+    margin-bottom: -5px;
+}
+
+.passwdRules ul{
+    list-style-type: none;
+    text-align: left;
+}
+
+.passwdRules li{
+    padding-top: 5px;
+}
+
+.passwdRules li::before{
+    content: "✖";
+    color: darkred;
+    margin-left: -30px;
+    margin-right: 10px;
+}
+
+.passwdRules li.checked::before{
+    content: "✔" !important;
+    color: green !important;
+}
+
+.message{
+    position: fixed;
+    top: 50px;
+    right: 10px;
+    height: 100px;
+    background-color: rgba(245, 245, 245, 0.7);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease;
+    box-shadow: 0 0 12px black;
+}
+
+.message p{
+    padding: 0 50px;
+    font-weight: 500;
+}
+
+.message::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    margin-top: 101px;
+    transition: width 5s ease;
+    background-color: black;
+    width: 0;
+}
+
+.success{
+    color: green;
+}
+
+.message.success::after{
+    background-color: darkgreen;
+}
+
+.message.success p::before{
+    content: "✔";
+    color: green;
+    margin-right: 15px;
+}
+
+.error{
+    color: darkred;
+}
+
+.message.error::after{
+    background-color: red;
+}
+
+.message.error p::before{
+    content: "✖";
+    color: darkred;
+    margin-right: 15px;
+}
+
+.message.loaded::after{
+    width: 100%;
 }

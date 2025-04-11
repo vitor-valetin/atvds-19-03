@@ -7,166 +7,141 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="style.css" />
-        <title>Curiosidades Senai</title>
+        <title>SENAI</title>
     </head>
     <body>
         <header>
             <img class="icon" src="imgs/menu.png" onClick="toggleMenu()">
 
-            <h2 id="mainButton">SENAI - Serviço Nacional de Aprendizagem Industrial</h2>
+            <h2>SENAI<span id="typedText"></span></h2>
         </header>
 
-        <section class="menu">
-            <ul>
-                <li id="firstItem"><a href="pages/register.html">Registrar-se</a></li>
-                <li id="secndItem"><a href="pages/login.html">Entrar</a></li>
-                <li id="thirdItem"><a href="pages/sobre.html">Sobre o SENAI</a></li>
-                <li id="fourthItem"><a href="pages/diretores.html">Diretores Gerais</a></li>
-                <li id="hoverAnimation" hidden></li>
-            </ul>
-        </section>
-
-        <section class="main" hidden>
-            
-
-            <section>
-                <h3>O que é o SENAI?</h3>
-                <p>
-                    Serviço Nacional de Aprendizagem Industrial (SENAI) é uma instituição privada brasileira de interesse público, sem fins lucrativos, 
-                    com personalidade jurídica de direito privado, estando fora da administração pública. Foi apontado pela Organização das Nações Unidas (ONU) em 2014 
-                    como uma das principais instituições educacionais do Hemisfério sul. Compõe o chamado Terceiro Setor.
-                </p>
-
-                <p>
-                    Primeira logomarca do SENAI/CNI.
-                    O Serviço Nacional de Aprendizagem Industrial (SENAI) foi criado pelo decreto-lei 4.048 de 22 de janeiro de 1942.
-                </p>
-
-                <p>
-                    Serviço Nacional de Aprendizagem Industrial (SENAI) no Recife, Pernambuco em 21 de maio de 2022.
-                    sede do SENAI Pernambuco em maio de 2022.
-                    Desde 2009 o SENAI, junto com o Ministério da Ciência e Tecnologia, por meio do Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq) 
-                    leva para a sociedade edital para estimular possibilidades de soluções inovadoras dentro das empresas. Para apresentar os resultados dos projetos foi criado, 
-                    em diferentes estados, um evento chamado de INOVA.
-                </p>
-                <a href="https://www.senaipr.org.br/" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIr2Sx9YHnAZmLQpyTO3JRfVOyhkI3hs-MDw&s"></a>
+        <div class="main-content">
+            <section class="menu">
+                <ul>
+                    <li class="mItem" id="firstItem"><a>Registrar-se</a></li>
+                    <li class="mItem" id="secndItem"><a>Entrar</a></li>
+                    <li class="mItem" id="thirdItem"><a>Sobre o SENAI</a></li>
+                    <li id="hoverAnimation" hidden></li>
+                </ul>
             </section>
 
-            <section class="tabela-lista">
-                <div class="container tabela">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th colspan="3">Diretores Gerais</th>
-                            </tr>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Época de Gerência</th>
-                                <th>Estado</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>José Manuel de Aguiar Martins</td>
-                                <td>2000 - 2010</td>
-                                <td>Maranhão</td>
-                            </tr>
-                            <tr>
-                                <td>Rafael Lucchesi</td>
-                                <td>2011 - 2023</td>
-                                <td>Rio de Janeiro</td>
-                            </tr>
-                            <tr>
-                                <td>Gustavo Leal Sales Filho</td>
-                                <td>2023 - Atual</td>
-                                <td>Bahia</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <section class="main">
+                <section>
+                    <h3>O que é o SENAI?</h3>
+                    <p>
+                        Serviço Nacional de Aprendizagem Industrial (SENAI) é uma instituição privada brasileira de interesse público, sem fins lucrativos, 
+                        com personalidade jurídica de direito privado, estando fora da administração pública. Foi apontado pela Organização das Nações Unidas (ONU) em 2014 
+                        como uma das principais instituições educacionais do Hemisfério sul. Compõe o chamado Terceiro Setor.
+                    </p>
 
-                <div class="container info">
-                    <ul type="square">
-                        <h3>Informações</h3>
-                        <li><label>Localização:</label> Brasília, DF</li>
-                        <li><label>Tipo de instituição:</label> Serviço social autônomo</li>
-                        <li><label>Fundação:</label> 	22 de janeiro de 1942 (83 anos) Rio de Janeiro, RJ, Brasil</li> 
-                        <li><label>Afiliações:</label> <a href="https://pt.wikipedia.org/wiki/Confedera%C3%A7%C3%A3o_Nacional_da_Ind%C3%BAstria" target="_blank">CNI</a></li>
-                        <li><label>Número de Estudantes:</label> 2.362.312 matrículas (2010)</li>
-                    </ul>
-                </div>
+                    <p>
+                        Primeira logomarca do SENAI/CNI.
+                        O Serviço Nacional de Aprendizagem Industrial (SENAI) foi criado pelo decreto-lei 4.048 de 22 de janeiro de 1942.
+                    </p>
+
+                    <p>
+                        Serviço Nacional de Aprendizagem Industrial (SENAI) no Recife, Pernambuco em 21 de maio de 2022.
+                        sede do SENAI Pernambuco em maio de 2022.
+                        Desde 2009 o SENAI, junto com o Ministério da Ciência e Tecnologia, por meio do Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq) 
+                        leva para a sociedade edital para estimular possibilidades de soluções inovadoras dentro das empresas. Para apresentar os resultados dos projetos foi criado, 
+                        em diferentes estados, um evento chamado de INOVA.
+                    </p>
+                    <a href="https://www.senaipr.org.br/" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIr2Sx9YHnAZmLQpyTO3JRfVOyhkI3hs-MDw&s"></a>
+                </section>
+
+                <section class="tabela-lista">
+                    <div class="container tabela">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th colspan="3">Diretores Gerais</th>
+                                </tr>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Época de Gerência</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>José Manuel de Aguiar Martins</td>
+                                    <td>2000 - 2010</td>
+                                    <td>Maranhão</td>
+                                </tr>
+                                <tr>
+                                    <td>Rafael Lucchesi</td>
+                                    <td>2011 - 2023</td>
+                                    <td>Rio de Janeiro</td>
+                                </tr>
+                                <tr>
+                                    <td>Gustavo Leal Sales Filho</td>
+                                    <td>2023 - Atual</td>
+                                    <td>Bahia</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="container info">
+                        <ul type="square">
+                            <h3>Informações</h3>
+                            <li><label>Localização:</label> Brasília, DF</li>
+                            <li><label>Tipo de instituição:</label> Serviço social autônomo</li>
+                            <li><label>Fundação:</label> 	22 de janeiro de 1942 (83 anos) Rio de Janeiro, RJ, Brasil</li> 
+                            <li><label>Afiliações:</label> <a href="https://pt.wikipedia.org/wiki/Confedera%C3%A7%C3%A3o_Nacional_da_Ind%C3%BAstria" target="_blank">CNI</a></li>
+                            <li><label>Número de Estudantes:</label> 2.362.312 matrículas (2010)</li>
+                        </ul>
+                    </div>
+                </section>
             </section>
 
-            <section class="form">
-                <div class="formulario">
-                    <form>
-                        <h2>Consultar Curso</h2>
-                        <img src="imgs/user.png">
-                        <input type="text" name="nome" placeholder="Insira seu nome completo..." />
-                        <br />
-                        <img src="imgs/envelope.png">
-                        <input type="email" name="email" placeholder="Insira seu e-mail..." />
-                        <br />
-                        <br />
-                        <label for="curso">Selecione um curso:</label>
-                        <br />
-                        <div class="arrow-custom">
-                            <select name="curso" id="cursos">
-                                <option value="" disabled selected>Escolha um curso</option>
-                                <option value="desenvolvimento-sistemas">Desenvolvimento de Sistemas</option>
-                                <option value="automacao-industrial">Automação Industrial</option>
-                                <option value="administracao">Administração</option>
-                                <option value="biotecnologia">Biotecnologia</option>
-                                <option value="cibersistemas-automacao">Cibersistemas para Automação</option>
-                                <option value="eletromecanica">Eletromecânica</option>
-                            </select>
+            <section class="register">
+                <div class="box-register">
+                    <h2>Registrar-se</h2>
+                    <form action="index.html" method="POST">
+                        <img class="regIcons" src="imgs/black_user.png">
+                        <input type="text" name="nome" placeholder="Nome...">
+                        <img class="regIcons" src="imgs/cpf.png">
+                        <input maxlength="14" name="cpf" id="CPF" placeholder="CPF..." type="text">
+                        <img class="regIcons" src="imgs/black_envelope.png">
+                        <input type="email" name="email" placeholder="E-mail...">
+                        <img class="regIcons" src="imgs/lock.png">
+                        <input type="password" name="senha" placeholder="Senha...">
+                        <div class="passwdRules">
+                            <p>Sua senha deve possuir:</p>
+                            <ul>
+                                <li id="char">Um mínimo de 12 caracteres.</li>
+                                <li id="letters">Uma letra maíuscula e mínuscula.</li>
+                                <li id="number">Um número.</li>
+                                <li id="special">Um caractere especial.</li>
+                            </ul>
                         </div>
+                        <img class="eye senha show" src="imgs/hide.png" id="show">
+                        <img class="eye senha hide" src="imgs/view.png" id="hide" hidden>
+                        <img class="regIcons" src="imgs/lock.png">
+                        <input type="password" name="confirmSenha" placeholder="Confirmar senha...">
+                        <img class="eye confirmSenha showC" src="imgs/hide.png" id="show">
+                        <img class="eye confirmSenha hideC" src="imgs/view.png" id="hide" hidden>
                         <br />
-                        <label for="termos" class="custom-check">
-                            <input type="checkbox" id="termos">
-                            <span></span>Você deseja receber e-mails sobre promoções no SENAI
-                        </label>
+                        <label for="termosRegister" class="custom-check">
+                            <input type="checkbox" id="termosRegister">
+                            <span></span>Você aceita os termos de serviço do SENAI?
+                        </label>                    
                         <br />
-                        <br />
-                        <button type="submit">Consultar</button>
+                        <button type="submit">Registrar</button>
                     </form>
                 </div>
             </section>
-        </section>
 
-        <section class="register" >
-            <div class="box-register">
-                <h2>Registrar-se</h2>
-                <form method="POST">
-                    <input type="text" name="nome" placeholder="Nome...">
-                    <input maxlength="14" name="cpf" id="CPF" placeholder="CPF..." type="text">
-                    <input type="email" name="email" placeholder="E-mail...">
-                    <input type="password" name="senha" placeholder="Senha...">
-                    <img class="eye senha show" src="imgs/hide.png" id="show">
-                    <img class="eye senha hide" src="imgs/view.png" id="hide" hidden>
-                    <input type="password" name="confirmSenha" placeholder="Confirmar senha...">
-                    <img class="eye confirmSenha showC" src="imgs/hide.png" id="show">
-                    <img class="eye confirmSenha hideC" src="imgs/view.png" id="hide" hidden>
-                    <br />
-                    <input type="checkbox" name="termos" id="termos">
-                    <label for="termos">Você aceitas todos os termos de serviço do SENAI.</label>
-                    <br />
-                    <button type="submit">Registrar</button>
-                </form>
-            </div>
-        </section>
+            <section class="login">
 
-        <section class="login" hidden>
+            </section>
 
-        </section>
+            <section class="about">
 
-        <section class="about" hidden>
-
-        </section>
-
-        <section class="diretores-gerais" hidden>
-
-        </section>
+            </section>
+        </div>
 
         <footer>
             <h4>Site feito por: <p>Vitor</p></h4>
