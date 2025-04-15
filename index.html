@@ -21,34 +21,48 @@
                 <ul>
                     <li class="mItem" id="firstItem"><a>Registrar-se</a></li>
                     <li class="mItem" id="secndItem"><a>Entrar</a></li>
-                    <li class="mItem" id="thirdItem"><a>Sobre o SENAI</a></li>
                     <li id="hoverAnimation" hidden></li>
                 </ul>
             </section>
 
             <section class="main">
-                <section>
-                    <h3>O que é o SENAI?</h3>
-                    <p>
-                        Serviço Nacional de Aprendizagem Industrial (SENAI) é uma instituição privada brasileira de interesse público, sem fins lucrativos, 
-                        com personalidade jurídica de direito privado, estando fora da administração pública. Foi apontado pela Organização das Nações Unidas (ONU) em 2014 
-                        como uma das principais instituições educacionais do Hemisfério sul. Compõe o chamado Terceiro Setor.
-                    </p>
+                <div class="center">
+                    <section class="desc-senai">
+                        <h3>O que é o SENAI?</h3>
+                        <p>
+                            Serviço Nacional de Aprendizagem Industrial (SENAI) é uma instituição privada brasileira de interesse público, sem fins lucrativos, 
+                            com personalidade jurídica de direito privado, estando fora da administração pública. Foi apontado pela Organização das Nações Unidas (ONU) em 2014 
+                            como uma das principais instituições educacionais do Hemisfério sul. Compõe o chamado Terceiro Setor.
+                        </p>
 
-                    <p>
-                        Primeira logomarca do SENAI/CNI.
-                        O Serviço Nacional de Aprendizagem Industrial (SENAI) foi criado pelo decreto-lei 4.048 de 22 de janeiro de 1942.
-                    </p>
+                        <p>
+                            Primeira logomarca do SENAI/CNI.
+                            O Serviço Nacional de Aprendizagem Industrial (SENAI) foi criado pelo decreto-lei 4.048 de 22 de janeiro de 1942.
+                        </p>
 
-                    <p>
-                        Serviço Nacional de Aprendizagem Industrial (SENAI) no Recife, Pernambuco em 21 de maio de 2022.
-                        sede do SENAI Pernambuco em maio de 2022.
-                        Desde 2009 o SENAI, junto com o Ministério da Ciência e Tecnologia, por meio do Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq) 
-                        leva para a sociedade edital para estimular possibilidades de soluções inovadoras dentro das empresas. Para apresentar os resultados dos projetos foi criado, 
-                        em diferentes estados, um evento chamado de INOVA.
-                    </p>
-                    <a href="https://www.senaipr.org.br/" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIr2Sx9YHnAZmLQpyTO3JRfVOyhkI3hs-MDw&s"></a>
-                </section>
+                        <p>
+                            Serviço Nacional de Aprendizagem Industrial (SENAI) no Recife, Pernambuco em 21 de maio de 2022.
+                            sede do SENAI Pernambuco em maio de 2022.
+                            Desde 2009 o SENAI, junto com o Ministério da Ciência e Tecnologia, por meio do Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq) 
+                            leva para a sociedade edital para estimular possibilidades de soluções inovadoras dentro das empresas. Para apresentar os resultados dos projetos foi criado, 
+                            em diferentes estados, um evento chamado de INOVA.
+                        </p>
+                        <div class="carousel">
+                            <div class="cButton" id="backward"><img src="imgs/next.png"></div>
+                            <img class="cImg" id="cActive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIr2Sx9YHnAZmLQpyTO3JRfVOyhkI3hs-MDw&s">
+                            <img class="cImg" src="https://s2-g1.glbimg.com/Mic9ZamZ2l14dHtEVxeXxoPMRIQ=/0x0:1292x726/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/g/y/ABmk1KQ5CsBFymMFz2Ag/4-materia.jpg">
+                            <img class="cImg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTULa5QbG3Teolp9AGCkBZt4dsVXD-0jhqBbA&s">
+                            <div class="cButton" id="forward"><img src="imgs/next.png"></div>
+                            <div class="cCircles">
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                                <div class="circle rActive"></div>
+                            </div>
+                        </div>
+                        <div class="overlay"></div>
+                    </section>
+                </div>
 
                 <section class="tabela-lista">
                     <div class="container tabela">
@@ -135,11 +149,18 @@
             </section>
 
             <section class="login">
-
-            </section>
-
-            <section class="about">
-
+                <div class="box-register box-login">
+                    <h2>Login</h2>
+                    <form action="index.html" method="POST">
+                        <img class="regIcons" src="imgs/black_envelope.png">
+                        <input type="email" name="email" placeholder="E-mail...">
+                        <img class="regIcons" src="imgs/lock.png">
+                        <input type="password" name="senha" placeholder="Senha...">
+                        <img class="eye senha show" src="imgs/hide.png" id="show">
+                        <img class="eye senha hide" src="imgs/view.png" id="hide" hidden>
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
             </section>
         </div>
 

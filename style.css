@@ -61,6 +61,7 @@ header{
     width: 100%;
     justify-content: center;
     height: 80px;
+    z-index: 100;
 }
 
 header .icon{
@@ -112,6 +113,7 @@ header h2:hover{
     top: 0;
     margin-top: 80px;
     transition: max-width 0.3s ease-in-out;
+    z-index: 100;
 }
 
 .menu ul{
@@ -143,6 +145,26 @@ header h2:hover{
     pointer-events: none;
 }
 
+.main section.desc-senai {
+    width: 85%;
+    height: 492px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+}
+
+.main p, .main h3{
+    position: relative;
+    z-index: 3;
+}
+
+.main h3{
+    font-size: 32px;
+    margin-top: 0;
+}
+
 section{
     margin-top: 100px;
     width: 100%;
@@ -154,10 +176,114 @@ p{
     letter-spacing: 0.8px;
 }
 
-img{
-    border-radius: 10px;
+.center{
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }
 
+.main img{
+    width: 100%;
+    height: 492px;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.main div.carousel{
+    position: absolute;
+    width: 95%;
+    height: 492px;
+    display: inline-block;
+    top: 100px;
+}
+
+.main img#cActive{
+    opacity: 1;
+}
+
+.main .overlay{
+    width: 95%;
+    height: 492px;
+    position: absolute;
+    top: 100px;
+    z-index: 1;
+    background-color: black;
+    opacity: 0.7;
+    border-radius: 20px;
+}
+
+.carousel .cButton{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 3;
+    background-color: black;
+    border-radius: 100%;
+    opacity: 0.5;
+    top: calc(50% - 25px);
+    transition: all 0.4s ease;
+}
+
+.cButton:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.cButton#backward{
+    left: 10px;
+}
+
+.cButton#forward{
+    right: 10px;
+}
+
+.cButton#backward img{
+    transform: rotate(180deg);
+    left: 0;
+}
+
+.cButton img{
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: 5px;
+    left: 7px;
+    opacity: 1;
+}
+
+.carousel .cCircles{
+    z-index: 4;
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cCircles .circle{
+    width: 10px;
+    height: 10px;
+    border: 2px solid white;
+    border-radius: 100%;
+    margin: 0 5px;
+}
+
+.cCircles .rActive{
+    position: absolute;
+    background-color: white;
+    transition: all 0.7s ease;
+    margin-right: 52px;
+}
+
+.desc-senai img{
+    border-radius: 20px;
+}
 
 .tabela-lista{
     margin-top: 30px;
@@ -224,7 +350,7 @@ img{
 }
 
 .container{
-    margin:0;
+    margin-bottom: 50px;
     display: flex;
     text-align: center;
     padding: 20px 0 20px 0;
@@ -452,6 +578,25 @@ footer h5{
     justify-content: center;
     align-items: center;
     height: 80vh;
+}
+
+.login{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.box-login{
+    height: 400px !important;
+}
+
+.box-login button{
+    top: 40px !important;
+}
+
+.box-login .senha{
+    top: 125px !important;
 }
 
 .box-register{

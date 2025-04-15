@@ -3,14 +3,16 @@ const menu = document.querySelector(".menu");
 const hoverAnim = document.querySelector("#hoverAnimation");
 const firstItem = document.querySelector("#firstItem");
 const secndItem = document.querySelector("#secndItem");
-const thirdItem = document.querySelector("#thirdItem");
 const fourthItem = document.querySelector("#fourthItem");
-const passwd = document.querySelector("input[name='senha']");
+const passwd = document.querySelector(".box-register input[name='senha']");
 const confirmPasswd = document.querySelector("input[name='confirmSenha']");
-const showPass = document.querySelector(".show");
-const showPassConfirm = document.querySelector(".showC");
-const hidePass = document.querySelector(".hide");
-const hidePassConfirm = document.querySelector(".hideC");
+const loginPasswd = document.querySelector(".box-login input[name='senha']");
+const showPass = document.querySelector(".box-register .show");
+const showPassConfirm = document.querySelector(".box-register .showC");
+const hidePass = document.querySelector(".box-register .hide");
+const hidePassConfirm = document.querySelector(".box-register .hideC");
+const showPassLogin = document.querySelector(".box-login .show");
+const hidePassLogin = document.querySelector(".box-login .hide");
 const cpf = document.querySelector("input[name='cpf']");
 const passChar = document.querySelector("#char");
 const passNumber = document.querySelector("#number");
@@ -27,6 +29,11 @@ const aboutPage = document.querySelector(".about");
 const itemsMenu = document.querySelectorAll("li.mItem");
 const senaiTitle = document.querySelector("header h2");
 const senaiComplete = document.querySelector("#typedText");
+const loginButton = document.querySelector(".box-login button");
+const carouselImgs = document.querySelectorAll(".carousel img.cImg");
+const cForward = document.getElementById("forward");
+const cBackward = document.getElementById("backward");
+const activeCircle = document.querySelector(".cCircles .rActive");
 
 var typed = false;
 
@@ -40,7 +47,7 @@ function toggleMenu()
 
 function typeText(element, text, options = {}) {
     const {
-        speed = 50,         
+        speed = 30,         
         index = 0,         
         callback = null,    
         onStart = null,     
@@ -146,29 +153,65 @@ function mascaraCPF(input) {
     }
 }
 
+function carouselImg(type)
+{
+    const activeImg = document.querySelector(".carousel img.cImg#cActive");
+    if (!activeImg) return;
+
+    const index = Array.from(carouselImgs).indexOf(activeImg);
+    activeImg.removeAttribute("id"); 
+    
+    let nextIndex;
+    if(type == "forward")
+    {
+        nextIndex = index < carouselImgs.length - 1 ? index + 1 : 0;
+    }else if(type == "backward")
+    {
+        nextIndex = index > 0 ? index - 1 : 2;
+    }
+    
+    carouselImgs[nextIndex].setAttribute("id", "cActive");
+    
+    activeCircle.style.marginRight = posCircleActive[nextIndex];
+}
+
 cpf.addEventListener("input", () => {
     mascaraCPF(cpf);
 });
 
 document.querySelectorAll("#show").forEach((item) => {
     item.addEventListener("click", () => {
-        passwd.type = "text";
-        confirmPasswd.type = "text";
-        showPass.toggleAttribute("hidden");
-        showPassConfirm.toggleAttribute("hidden");
-        hidePass.toggleAttribute("hidden");
-        hidePassConfirm.toggleAttribute("hidden");
+        if(item.parentElement.parentElement.classList.contains("box-login"))
+        {
+            loginPasswd.type = "text"
+            showPassLogin.toggleAttribute("hidden");
+            hidePassLogin.toggleAttribute("hidden");
+        }else{
+            passwd.type = "text";
+            confirmPasswd.type = "text";
+            showPass.toggleAttribute("hidden");
+            showPassConfirm.toggleAttribute("hidden");
+            hidePass.toggleAttribute("hidden");
+            hidePassConfirm.toggleAttribute("hidden");
+        }
     })
 });
 
 document.querySelectorAll("#hide").forEach((item) => {
     item.addEventListener("click", () => {
-        passwd.type = "password";
-        confirmPasswd.type = "password";
-        showPass.toggleAttribute("hidden");
-        showPassConfirm.toggleAttribute("hidden");
-        hidePass.toggleAttribute("hidden");
-        hidePassConfirm.toggleAttribute("hidden");
+        if(item.parentElement.parentElement.classList.contains("box-login"))
+        {
+            loginPasswd.type = "password"
+            showPassLogin.toggleAttribute("hidden");
+            hidePassLogin.toggleAttribute("hidden");
+        }else{ 
+            passwd.type = "password";
+            confirmPasswd.type = "password";
+            showPass.toggleAttribute("hidden");
+            showPassConfirm.toggleAttribute("hidden");
+            hidePass.toggleAttribute("hidden");
+            hidePassConfirm.toggleAttribute("hidden");
+        }
     })
 });
 
@@ -180,11 +223,6 @@ firstItem.addEventListener("mouseover", () => {
 secndItem.addEventListener("mouseover", () => {
     hoverAnim.removeAttribute("hidden");
     hoverAnim.style.top = "52px";
-});
-
-thirdItem.addEventListener("mouseover", () => {
-    hoverAnim.removeAttribute("hidden");
-    hoverAnim.style.top = "104px";
 });
 
 passwd.addEventListener("input", () => {
@@ -218,11 +256,16 @@ passwd.addEventListener("input", () => {
 });
 
 registerButton.addEventListener("click", (e) => {
+    e.preventDefault();
     if(!validateForm())
     {
         popupMessage("error", "Alguma informação foi preenchida de forma incorreta!");
     }
+});
+
+loginButton.addEventListener("click", (e) => {
     e.preventDefault();
+    popupMessage("success", "Login realizado com sucesso!");
 });
 
 const menuItems = [
@@ -235,11 +278,6 @@ const menuItems = [
         id: "secndItem",
         element: loginPage,
         text: "Entrar"
-    },
-    {
-        id: "thirdItem",
-        element: aboutPage,
-        text: "Sobre o SENAI"
     }
 ];
 
@@ -259,6 +297,7 @@ itemsMenu.forEach(item => {
         }else
         {
             const active = document.querySelector(".active");
+            console.log(active);
             if(active != undefined){
                 active.classList.remove("active");
             }else{
@@ -274,6 +313,7 @@ itemsMenu.forEach(item => {
                 }
                 if(item.id == id)
                 {
+                    
                     element.style.display = "flex";
                 }
             });
@@ -294,4 +334,14 @@ senaiTitle.addEventListener("click", () => {
         eraseText(senaiComplete, {callback : () => {typed = false;}});
         senaiComplete.classList.remove("blinking");
     }
+});
+
+var posCircleActive = ["52px", "5px", "-42px"];
+
+cForward.addEventListener("click", () => {
+    carouselImg("forward");
+});
+
+cBackward.addEventListener("click", () => {
+    carouselImg("backward");
 });
